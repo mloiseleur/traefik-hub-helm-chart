@@ -67,7 +67,6 @@ spec:
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           name: traefik
           args:
-            - ic
             - --entrypoints.metrics.address=:9100
             - --entrypoints.traefik.address=:9000
             - --entrypoints.web.address=:8000
@@ -82,6 +81,9 @@ spec:
             - --providers.kubernetescrd.allowExternalNameServices=true
             - --providers.kubernetesingress.allowEmptyServices=true
             - --providers.kubernetesingress.allowExternalNameServices=true
+            {{- if .Values.ingressRoute.dashboard.enabled }}
+            - --api=true
+            {{- end }}
             {{- with .Values.providers }}
             {{- with .kubernetesCRD.endpoint }}
             - --providers.kubernetescrd.endpoint="{{ . }}"

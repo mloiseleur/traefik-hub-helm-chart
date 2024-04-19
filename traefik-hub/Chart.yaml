@@ -2,7 +2,7 @@ apiVersion: v2
 name: traefik-hub
 description: Traefik Hub Ingress Controller
 type: application
-version: 5.0.0-alpha1
+version: 5.0.0-alpha.1
 # renovate: image=ghcr.io/traefik/traefik-hub
 appVersion: v3.0.0
 kubeVersion: ">=1.24.0-0"
@@ -23,7 +23,8 @@ maintainers:
 icon: https://doc.traefik.io/traefik-hub/assets/images/logos-traefik-hub-horizontal.svg
 annotations:
   artifacthub.io/changes: |
-    - "docs: add missing helm repo on README"
-    - "feat!: LoadBalancer Service by default"
-    - "doc: install notes"
-    - "fix: Service annotations indent"
+    - "feat: add option to update image pull policy"
+    - "feat: traefik v3 upgrade"
+    - "feat: add ingressroute for dashboard options"
+    - "feat: remove sidecar mode"
+    - "chore: update CRDs to v1.0.0"

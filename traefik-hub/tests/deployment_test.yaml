@@ -64,10 +64,10 @@ tests:
     asserts:
       - lengthEqual:
           path: spec.template.spec.containers[0].args
-          count: 15
+          count: 14
       - contains:
           path: spec.template.spec.containers[0].args
-          content: ic
+          content: --entrypoints.metrics.address=:9100
       - contains:
           path: spec.template.spec.containers[0].args
           content:
@@ -289,3 +289,10 @@ tests:
       - equal:
           path: spec.template.spec.containers[0].imagePullPolicy
           value: Always
+  - it: enable the dashboard
+    set:
+      ingressRoute.dashboard.enabled: true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: --api=true
