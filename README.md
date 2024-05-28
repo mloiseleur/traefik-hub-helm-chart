@@ -1,5 +1,8 @@
 <a name="readme-top"></a>
 
+> Since the end of May 2024, Traefik Hub and Traefik Proxy are installed with the same Traefik Helm Chart.
+> This Chart is in [traefik/traefik-helm-chart](https://github.com/traefik/traefik-helm-chart)
+
 <br/>
 
 <div align="center" style="margin: 30px;">
